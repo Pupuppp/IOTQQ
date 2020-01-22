@@ -271,7 +271,7 @@
                 "ParamsName": "PicUrl",
                 "Required": true,
                 "Describe": "",
-                "ParamsType": "array"
+                "ParamsType": "object"
             }
         ]
     },
