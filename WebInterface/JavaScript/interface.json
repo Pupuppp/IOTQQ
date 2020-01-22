@@ -1,0 +1,657 @@
+{
+    "SendMsg": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=SendMsg&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "toUser",
+                "Required": true,
+                "Describe": "接收人QQ或QQ群",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "sendToType",
+                "Required": true,
+                "Describe": "发送人类型 1私人 2群 3私聊",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "sendMsgType",
+                "Required": true,
+                "Describe": "消息类型",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "content",
+                "Required": true,
+                "Describe": "发送内容",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "groupid",
+                "Required": true,
+                "Describe": "群号 私聊用",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "atUser",
+                "Required": true,
+                "Describe": "艾特的人",
+                "ParamsType": "number"
+            }
+        ]
+    },
+    "GetFriendList": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=GetQQUserList&timeout=10",
+        "Method": "POST",
+        "Params": [{
+            "ParamsName": "StartIndex",
+            "Required": true,
+            "Describe": "最大拉取数量",
+            "ParamsType": "number"
+        }]
+    },
+    "GroupMgr": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=GroupMgr&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "ActionType",
+                "Required": true,
+                "Describe": "ActionType=3 移出群聊  ActionType=1 加入群聊 ActionType=2 退出群聊 ",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "GroupID",
+                "Required": true,
+                "Describe": "操作的QQ群",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "ActionUserID",
+                "Required": true,
+                "Describe": "被操作人QQ",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Content",
+                "Required": true,
+                "Describe": "申请入群信息 退出和移除时不需要",
+                "ParamsType": "string"
+            }
+        ]
+    },
+    "GetClusterInfo": {
+        "Url": "http://$Host/v1/ClusterInfo",
+        "Method": "GET"
+    },
+    "SearchGroup": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=GroupMgr&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "Content",
+                "Required": true,
+                "Describe": "地区",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Page",
+                "Required": true,
+                "Describe": "页数",
+                "ParamsType": "number"
+            }
+        ]
+    },
+    "GetGroupList": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=GetGroupList&timeout=10",
+        "Method": "POST",
+        "Params": [{
+            "ParamsName": "NextToken",
+            "Required": true,
+            "Describe": "下次请求使用",
+            "ParamsType": "string"
+        }]
+    },
+    "GetGroupUserList": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=GetGroupUserList&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "GroupUin",
+                "Required": true,
+                "Describe": "群号",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "LastUin",
+                "Required": true,
+                "Describe": "用于下次请求的值 为0时代表拉取完毕",
+                "ParamsType": "string"
+            }
+        ]
+    },
+    "QQZan": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=QQZan&timeout=10",
+        "Method": "POST",
+        "Params": [{
+            "ParamsName": "UserID",
+            "Required": true,
+            "Describe": "被赞的QQ号",
+            "ParamsType": "number"
+        }]
+    },
+    "GetBalance": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=GetBalance&timeout=10",
+        "Method": "GET"
+    },
+    "SendSingleRed": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=SendSingleRed&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "RevGroupid",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "RecvUid",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Amount",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Paypass",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "TotalNum",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Wishing",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Skinid",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "RecvType",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "RedType",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            }
+        ]
+    },
+    "Transfer": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=Transfer&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "TransferUid",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Amount",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Paypass",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            }
+        ]
+    },
+    "AddQQUser": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=AddQQUser&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "AddUserUid",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "FromGroupID",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "AddFromSource",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Content",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            }
+        ]
+    },
+    "QzonePublish": {
+        "Url": "http://$Host/v1/QzoneNewService/Publish?qq=$QQ",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "DeviceType",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Content",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "PicUrl",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "array"
+            }
+        ]
+    },
+    "GetQRcode": {
+        "Url": "http://$Host/v1/Login/GetQRcode",
+        "Method": "GET"
+    },
+    "RefreshKeys": {
+        "Url": "http://$Host/v1/RefreshKeys?qq=$QQ",
+        "Method": "GET"
+    },
+    "RevokeMsg": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=RevokeMsg&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "GroupID",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "MsgSeq",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "MsgRandom",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            }
+        ]
+    },
+    "ShutUp": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=ShutUp&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "ShutUpType",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "GroupID",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "ShutUid",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "ShutTime",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            }
+        ]
+    },
+    "Announce": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=Announce&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "GroupID",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Title",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Text",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Pinned",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Type",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            }
+        ]
+    },
+    "LogOut": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=LogOut&timeout=10",
+        "Method": "POST",
+        "Params": [{
+            "ParamsName": "Flag",
+            "Required": true,
+            "Describe": "",
+            "ParamsType": "boolean"
+        }]
+    },
+    "GetUserCook": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=GetUserCook&timeout=10",
+        "Method": "GET"
+    },
+    "DealFriend": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=DealFriend&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "UserID",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "FromType",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Field_9",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Content",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "FromGroupId",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "FromGroupName",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Action",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            }
+        ]
+    },
+    "ModifyGroupCard": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=ModifyGroupCard&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "GroupID",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "UserID",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "NewNick",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            }
+        ]
+    },
+    "OpenRedBag": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=OpenRedBag&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "Tittle",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Des",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "RedType",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Listid",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Authkey",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Channel",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "StingIndex",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Token_17_2",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Token_17_3",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "FromUin",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "FromType",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            }
+        ]
+    },
+    "AnswerInviteGroup": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=AnswerInviteGroup&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "Seq",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Type",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "MsgTypeStr",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Who",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "WhoName",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "MsgStatusStr",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Flag_7",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "Flag_8",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "GroupId",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "GroupName",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "InviteUin",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "InviteName",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "string"
+            },
+            {
+                "ParamsName": "Action",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            }
+        ]
+    },
+    "SetUniqueTitle": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=AnswerInviteGroup&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "ShutUpType",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "GroupID",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "ShutUid",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "ShutTime",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            }
+        ]
+    },
+    "GetUserInfo": {
+        "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=GetUserInfo&timeout=10",
+        "Method": "POST",
+        "Params": [{
+                "ParamsName": "UserID",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            },
+            {
+                "ParamsName": "GroupID",
+                "Required": true,
+                "Describe": "",
+                "ParamsType": "number"
+            }
+        ]
+    }
+}
